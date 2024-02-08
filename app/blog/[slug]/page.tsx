@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
+export const revalidate = 30;
+
 async function getBlogPost(slug: string) {
   const query = `*[_type == 'blog' && slug.current == '${slug}'] {
     "currentSlug": slug.current,
