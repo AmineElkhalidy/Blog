@@ -4,3 +4,10 @@ export interface SimpleBlog {
   currentSlug: string;
   titleImage: any;
 }
+
+export interface BlogPost {
+  currentSlug: string;
+  title: string;
+  titleImage: any;
+  content: any;
+}

@@ -21,8 +21,8 @@ const Home = async () => {
   const data: SimpleBlog[] = await getData();
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="grid md:grid-cols-2 mt-16 gap-6">
+    <div className="flex items-center justify-center mt-16">
+      <div className="grid md:grid-cols-2 gap-6">
         {data.map((post, index) => (
           <Card className="max-w-[480px]" key={index}>
             <Image

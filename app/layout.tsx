@@ -27,7 +27,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className={cn("max-w-6xl mx-auto p-6 xl:px-0", inter.className)}>
+          <div className={cn("max-w-4xl mx-auto p-6 xl:px-0", inter.className)}>
             <Navbar />
             <main>{children}</main>
           </div>
