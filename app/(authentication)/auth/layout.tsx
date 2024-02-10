@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
@@ -28,7 +28,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className={cn("max-w-4xl mx-auto p-6 xl:px-0", inter.className)}>
-            <Navbar />
             <main>{children}</main>
           </div>
         </ThemeProvider>
