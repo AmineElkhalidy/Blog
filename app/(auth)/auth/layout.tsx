@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,9 +26,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className={cn("max-w-4xl mx-auto p-6 xl:px-0", inter.className)}>
-            <main>{children}</main>
-          </div>
+          <main
+            className={cn(
+              "w-full min-h-screen flex justify-center items-center",
+              inter.className
+            )}
+          >
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>
