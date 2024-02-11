@@ -28,7 +28,7 @@ export default function RootLayout({
         >
           <main
             className={cn(
-              "w-full min-h-screen flex justify-center items-center",
+              "w-full min-h-screen flex justify-center items-center py-10",
               inter.className
             )}
           >
