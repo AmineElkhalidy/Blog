@@ -21,6 +21,7 @@ async function getData() {
 
 const Home = async () => {
   const data: SimpleBlog[] = await getData();
+  console.log(urlFor(data[0].image).url());
 
   return (
     <div className="flex items-center justify-center mt-16">
