@@ -4,13 +4,22 @@ import { ModeToggle } from "./ModeToggle";
 import { Bai_Jamjuree } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { AvatarIcon } from "@radix-ui/react-icons";
+import { Button } from "./ui/button";
+import { UserButton } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
   weight: ["700"],
 });
 
-const Navbar = () => {
+const Navbar = async () => {
+  // Get the userId from auth() -- if null, the user is not logged in
+  const { userId } = auth();
+
+  // Get the Backend API User object when you need access to the user's information
+  const user = await currentUser();
+
   return (
     <nav className="w-full relative flex items-center justify-between ">
       <Link
@@ -21,12 +30,19 @@ const Navbar = () => {
       </Link>
 
       <div className="flex items-center gap-x-3">
-        <Link
-          className="inline-block p-1.5 bg-white shadow-sm rounded-md border"
-          href="/auth/login"
-        >
-          <AvatarIcon className="w-6 h-6" />
-        </Link>
+        {user ? (
+          <UserButton afterSignOutUrl="/" />
+        ) : (
+          <Button variant="ghost" asChild className="px-1.5">
+            <Link
+              className="inline-block bg-white dark:bg-black shadow-sm rounded-md border"
+              href="/sign-in"
+            >
+              <AvatarIcon className="w-6 h-6" />
+            </Link>
+          </Button>
+        )}
+
         <ModeToggle />
       </div>
     </nav>

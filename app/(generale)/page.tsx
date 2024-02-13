@@ -32,6 +32,7 @@ const Home = async () => {
               alt={post.title}
               width={500}
               height={500}
+              priority
               className="rounded-t-lg h-[250px] object-fill"
             />
 
