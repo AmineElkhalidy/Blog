@@ -17,9 +17,9 @@ export default {
       },
     },
     {
-      name: 'titleImage',
+      name: 'image',
       type: 'image',
-      title: 'Title Image',
+      title: 'Image',
     },
     {
       name: 'smallDescription',

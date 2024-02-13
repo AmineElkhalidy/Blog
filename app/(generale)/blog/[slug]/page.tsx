@@ -10,7 +10,7 @@ async function getBlogPost(slug: string) {
   const query = `*[_type == 'blog' && slug.current == '${slug}'] {
     "currentSlug": slug.current,
     title,
-    titleImage,
+    image,
     content
   }[0]`;
 
@@ -21,8 +21,6 @@ async function getBlogPost(slug: string) {
 const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
   const data: BlogPost = await getBlogPost(slug);
-
-  console.log(data);
 
   return (
     <div className="mt-16">
@@ -36,7 +34,7 @@ const BlogDetailsPage = async ({ params }: { params: { slug: string } }) => {
       </h1>
       <div className="mt-10 flex items-center justify-center">
         <Image
-          src={urlFor(data.titleImage).url()}
+          src={urlFor(data.image).url()}
           alt={data.title}
           width={800}
           height={800}

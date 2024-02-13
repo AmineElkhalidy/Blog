@@ -12,7 +12,7 @@ async function getData() {
       title,
       smallDescription,
       'currentSlug': slug.current,
-      titleImage
+      image
     }`;
 
   const response = await client.fetch(query);
@@ -28,7 +28,7 @@ const Home = async () => {
         {data.map((post, index) => (
           <Card className="max-w-[480px]" key={index}>
             <Image
-              src={urlFor(post.titleImage).url()}
+              src={urlFor(post.image).url()}
               alt={post.title}
               width={500}
               height={500}

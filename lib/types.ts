@@ -2,12 +2,12 @@ export interface SimpleBlog {
   title: string;
   smallDescription: string;
   currentSlug: string;
-  titleImage: any;
+  image: any;
 }
 
 export interface BlogPost {
   currentSlug: string;
   title: string;
-  titleImage: any;
+  image: any;
   content: any;
 }

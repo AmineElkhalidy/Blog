@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { AvatarIcon } from "@radix-ui/react-icons";
 import { Button } from "./ui/button";
 import { UserButton } from "@clerk/nextjs";
-import { auth, currentUser } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs";
 
 const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
@@ -14,14 +14,11 @@ const baiJamjuree = Bai_Jamjuree({
 });
 
 const Navbar = async () => {
-  // Get the userId from auth() -- if null, the user is not logged in
-  const { userId } = auth();
-
   // Get the Backend API User object when you need access to the user's information
   const user = await currentUser();
 
   return (
-    <nav className="w-full relative flex items-center justify-between ">
+    <nav className="w-full relative flex items-center justify-between">
       <Link
         className={cn("font-bold text-[25px] uppercase", baiJamjuree.className)}
         href="/"
