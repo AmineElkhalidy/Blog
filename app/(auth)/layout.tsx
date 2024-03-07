@@ -20,7 +20,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <body className="font-inter">
           <main
             className={cn(
-              "w-full min-h-screen flex justify-center items-center",
+              "h-full flex items-center justify-center",
               font.className
             )}
           >
