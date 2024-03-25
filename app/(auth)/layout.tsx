@@ -1,5 +1,4 @@
 import React from "react";
-import { ClerkProvider } from "@clerk/nextjs";
 import { cn } from "@/lib/utils";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
@@ -15,20 +14,14 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body className="font-inter">
-          <main
-            className={cn(
-              "h-full flex items-center justify-center",
-              font.className
-            )}
-          >
-            {children}
-          </main>
-        </body>
-      </html>
-    </ClerkProvider>
+    <div
+      className={cn(
+        "min-h-screen w-full flex items-center justify-center py-10",
+        font.className
+      )}
+    >
+      {children}
+    </div>
   );
 };
 

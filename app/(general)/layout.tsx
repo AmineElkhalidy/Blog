@@ -4,7 +4,7 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
-import { ClerkProvider } from "@clerk/nextjs";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,24 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div
-              className={cn("max-w-4xl mx-auto p-6 xl:px-0", inter.className)}
-            >
-              <Navbar />
-              <main>{children}</main>
-            </div>
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className={cn("max-w-4xl mx-auto p-6 xl:px-0", inter.className)}>
+            <Navbar />
+            <main>{children}</main>
+          </div>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
